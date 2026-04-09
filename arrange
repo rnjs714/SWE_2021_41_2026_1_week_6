@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR_PATH="./files"
+
+for FILE_PATH in "$DIR_PATH"/*
+do
+FILE_NAME=$(basename "$FILE_PATH")
+FIRST_CHAR="${FILE_NAME:0:1}"
+LOWER_CHAR=$(echo "$FIRST_CHAR" | tr 'A-Z' 'a-z')
+mv $FILE_PATH ./"$LOWER_CHAR"
+done
